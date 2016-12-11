@@ -33,3 +33,6 @@ int main()
     return 0;
 }
 ```
+
+### NOTE:
+#### startQLog()应在daemon()之后再调用，不然daemon的fork会清除掉之前生成的log线程, log线程的作用主要是刷新缓冲区内容到文件，即便没有此线程，在程序正常结束时内容会自动刷新到文件。
