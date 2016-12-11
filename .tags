@@ -1,0 +1,84 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+main	D:\Cloud\git\Ä£°å\qlog\main.cc	/^int main()$/;"	function	line:7	signature:()
+qzg	D:\Cloud\git\Ä£°å\qlog\qlog.cc	/^namespace qzg {$/;"	namespace	line:19	file:
+log_routine	D:\Cloud\git\Ä£°å\qlog\qlog.cc	/^void *log_routine(void *arg) {$/;"	function	line:22	namespace:qzg	signature:(void *arg)
+main	D:\Cloud\git\Ä£°å\qlog\qlog.cc	/^void QLogger::main() {$/;"	function	line:31	class:qzg::QLogger	signature:()
+QLogger	D:\Cloud\git\Ä£°å\qlog\qlog.cc	/^QLogger::QLogger(): level_(LALL), rotateSize_(64 << 10), fd_(-1), flags_(LTIMESTAMP|LFILELINE|LTHREADTID|LLOGLEVEL),$/;"	function	line:45	class:qzg::QLogger	signature:()
+~QLogger	D:\Cloud\git\Ä£°å\qlog\qlog.cc	/^QLogger::~QLogger() {$/;"	function	line:53	class:qzg::QLogger	signature:()
+levelStrs_	D:\Cloud\git\Ä£°å\qlog\qlog.cc	/^const char *QLogger::levelStrs_[] = {$/;"	member	line:69	class:qzg::QLogger	file:
+getLogger	D:\Cloud\git\Ä£°å\qlog\qlog.cc	/^QLogger& QLogger::getLogger() {$/;"	function	line:80	class:qzg::QLogger	signature:()
+setLogLevel	D:\Cloud\git\Ä£°å\qlog\qlog.cc	/^void QLogger::setLogLevel(const string& level) {$/;"	function	line:85	class:qzg::QLogger	signature:(const string& level)
+setFileName	D:\Cloud\git\Ä£°å\qlog\qlog.cc	/^void QLogger::setFileName(string filename, bool locked) {$/;"	function	line:98	class:qzg::QLogger	signature:(string filename, bool locked)
+flush	D:\Cloud\git\Ä£°å\qlog\qlog.cc	/^void QLogger::flush() {$/;"	function	line:143	class:qzg::QLogger	signature:()
+getTimestamp	D:\Cloud\git\Ä£°å\qlog\qlog.cc	/^int QLogger::getTimestamp(char *buf, int len) {$/;"	function	line:174	class:qzg::QLogger	signature:(char *buf, int len)
+tid	D:\Cloud\git\Ä£°å\qlog\qlog.cc	/^static thread_local uint64_t tid;$/;"	member	line:181	namespace:qzg	file:
+log	D:\Cloud\git\Ä£°å\qlog\qlog.cc	/^void QLogger::log(int level, const char *file, int line, const char *func, const char *fmt, ...) {$/;"	function	line:182	class:qzg::QLogger	signature:(int level, const char *file, int line, const char *func, const char *fmt, ...)
+qlog_trace	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^#define qlog_trace(/;"	macro	line:8
+qlog_debug	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^#define qlog_debug(/;"	macro	line:9
+qlog_info	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^#define qlog_info(/;"	macro	line:10
+qlog_warn	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^#define qlog_warn(/;"	macro	line:11
+qlog_uerr	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^#define qlog_uerr(/;"	macro	line:12
+qlog_err	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^#define qlog_err(/;"	macro	line:13
+qlog_fatal	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^#define qlog_fatal(/;"	macro	line:14
+setLog_level	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^#define setLog_level(/;"	macro	line:16
+setLog_filename	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^#define setLog_filename(/;"	macro	line:17
+setLog_size	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^#define setLog_size(/;"	macro	line:18
+setLog_flag	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^#define setLog_flag(/;"	macro	line:19
+setLog_syncInterval	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^#define setLog_syncInterval(/;"	macro	line:20
+startQLog	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^#define startQLog(/;"	macro	line:22
+qlog	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^#define qlog(/;"	macro	line:25
+qzg	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^namespace qzg {$/;"	namespace	line:33
+noncopyable	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^struct noncopyable {$/;"	struct	line:35	namespace:qzg
+noncopyable	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    noncopyable() {}$/;"	function	line:36	struct:qzg::noncopyable	signature:()
+LockGuard	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^struct LockGuard {$/;"	struct	line:41	namespace:qzg
+LockGuard	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    LockGuard(pthread_mutex_t *pmtx): pmtx_(pmtx) {$/;"	function	line:42	struct:qzg::LockGuard	signature:(pthread_mutex_t *pmtx)
+~LockGuard	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    ~LockGuard() {$/;"	function	line:45	struct:qzg::LockGuard	signature:()
+pmtx_	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    pthread_mutex_t *pmtx_;$/;"	member	line:49	struct:qzg::LockGuard
+QLogger	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^struct QLogger: private noncopyable {$/;"	struct	line:53	namespace:qzg
+LogLevel	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    enum LogLevel { LFATAL = 0, LERROR, LUERR, LWARN, LINFO, LDEBUG, LTRACE, LALL };$/;"	enum	line:54	struct:qzg::QLogger
+LFATAL	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    enum LogLevel { LFATAL = 0, LERROR, LUERR, LWARN, LINFO, LDEBUG, LTRACE, LALL };$/;"	enumerator	line:54	enum:qzg::QLogger::LogLevel
+LERROR	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    enum LogLevel { LFATAL = 0, LERROR, LUERR, LWARN, LINFO, LDEBUG, LTRACE, LALL };$/;"	enumerator	line:54	enum:qzg::QLogger::LogLevel
+LUERR	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    enum LogLevel { LFATAL = 0, LERROR, LUERR, LWARN, LINFO, LDEBUG, LTRACE, LALL };$/;"	enumerator	line:54	enum:qzg::QLogger::LogLevel
+LWARN	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    enum LogLevel { LFATAL = 0, LERROR, LUERR, LWARN, LINFO, LDEBUG, LTRACE, LALL };$/;"	enumerator	line:54	enum:qzg::QLogger::LogLevel
+LINFO	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    enum LogLevel { LFATAL = 0, LERROR, LUERR, LWARN, LINFO, LDEBUG, LTRACE, LALL };$/;"	enumerator	line:54	enum:qzg::QLogger::LogLevel
+LDEBUG	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    enum LogLevel { LFATAL = 0, LERROR, LUERR, LWARN, LINFO, LDEBUG, LTRACE, LALL };$/;"	enumerator	line:54	enum:qzg::QLogger::LogLevel
+LTRACE	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    enum LogLevel { LFATAL = 0, LERROR, LUERR, LWARN, LINFO, LDEBUG, LTRACE, LALL };$/;"	enumerator	line:54	enum:qzg::QLogger::LogLevel
+LALL	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    enum LogLevel { LFATAL = 0, LERROR, LUERR, LWARN, LINFO, LDEBUG, LTRACE, LALL };$/;"	enumerator	line:54	enum:qzg::QLogger::LogLevel
+LogFlag	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    enum LogFlag {$/;"	enum	line:55	struct:qzg::QLogger
+LTIMESTAMP	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^        LTIMESTAMP  = 1 << 0,$/;"	enumerator	line:56	enum:qzg::QLogger::LogFlag
+LTHREADTID	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^        LTHREADTID  = 1 << 1,$/;"	enumerator	line:57	enum:qzg::QLogger::LogFlag
+LFILELINE	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^        LFILELINE   = 1 << 2,$/;"	enumerator	line:58	enum:qzg::QLogger::LogFlag
+LLOGLEVEL	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^        LLOGLEVEL   = 1 << 3$/;"	enumerator	line:59	enum:qzg::QLogger::LogFlag
+setFileSize	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    void setFileSize(off_t rotateSize) { LockGuard lg(&mtx_); rotateSize_ = rotateSize; }$/;"	function	line:66	struct:qzg::QLogger	signature:(off_t rotateSize)
+setLogLevel	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    void setLogLevel(LogLevel level) { LockGuard lg(&mtx_); level_ = std::min(LALL, std::max(LFATAL, level)); }$/;"	function	line:68	struct:qzg::QLogger	signature:(LogLevel level)
+setFileFlag	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    void setFileFlag(int flags) { LockGuard lg(&mtx_); flags_ = flags; }$/;"	function	line:69	struct:qzg::QLogger	signature:(int flags)
+setSyncInterval	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    void setSyncInterval(int sec) { LockGuard lg(&mtx_); syncInterval_ = sec; } \/\/ exec QLogger::sync()$/;"	function	line:70	struct:qzg::QLogger	signature:(int sec)
+getLogLevel	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    LogLevel getLogLevel() { LockGuard lg(&mtx_); return level_; }$/;"	function	line:72	struct:qzg::QLogger	signature:()
+getLogLevelStr	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    const char *getLogLevelStr() { LockGuard lg(&mtx_); return levelStrs_[level_]; }$/;"	function	line:73	struct:qzg::QLogger	signature:()
+getFd	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    int getFd() { LockGuard lg(&mtx_); return fd_; }$/;"	function	line:74	struct:qzg::QLogger	signature:()
+start	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    void start() { pthread_create(&tid_, NULL, log_routine, this); }$/;"	function	line:77	struct:qzg::QLogger	signature:()
+lock	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    void lock() { pthread_mutex_lock(&mtx_); }$/;"	function	line:81	struct:qzg::QLogger	signature:()
+unlock	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    void unlock() { pthread_mutex_unlock(&mtx_); }$/;"	function	line:82	struct:qzg::QLogger	signature:()
+inform	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    void inform() { pthread_cond_signal(&cond_); }$/;"	function	line:83	struct:qzg::QLogger	signature:()
+levelStrs_	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    static const char *levelStrs_[LALL + 1];$/;"	member	line:88	struct:qzg::QLogger
+level_	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    LogLevel level_;$/;"	member	line:89	struct:qzg::QLogger
+rotateSize_	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    off_t rotateSize_;$/;"	member	line:90	struct:qzg::QLogger
+fd_	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    int fd_;$/;"	member	line:91	struct:qzg::QLogger
+flags_	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    int flags_;$/;"	member	line:92	struct:qzg::QLogger
+syncInterval_	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    int syncInterval_;$/;"	member	line:93	struct:qzg::QLogger
+filename_	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    std::string filename_;$/;"	member	line:94	struct:qzg::QLogger
+oldFilename_	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    std::string oldFilename_;$/;"	member	line:95	struct:qzg::QLogger
+prefix_	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    std::string prefix_; \/\/ for auto rotate$/;"	member	line:96	struct:qzg::QLogger
+mtx_	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    pthread_mutex_t mtx_;$/;"	member	line:98	struct:qzg::QLogger
+condMtx_	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    pthread_mutex_t condMtx_;$/;"	member	line:99	struct:qzg::QLogger
+cond_	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    pthread_cond_t cond_;$/;"	member	line:100	struct:qzg::QLogger
+logBuf_	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    std::queue<std::string> logBuf_;$/;"	member	line:101	struct:qzg::QLogger
+tid_	D:\Cloud\git\Ä£°å\qlog\qlog.h	/^    pthread_t tid_;$/;"	member	line:102	struct:qzg::QLogger
+ç®€æ´æ˜“ç”¨çš„C++11å¤šçº¿ç¨‹å…±äº«å¼‚æ­¥æ—¥å¿—æ¨¡å—	D:\Cloud\git\Ä£°å\qlog\README.md	/^## ç®€æ´æ˜“ç”¨çš„C++11å¤šçº¿ç¨‹å…±äº«å¼‚æ­¥æ—¥å¿—æ¨¡å—$/;"	function	line:4
+ä»£ç ç¤ºä¾‹	D:\Cloud\git\Ä£°å\qlog\README.md	/^### ä»£ç ç¤ºä¾‹$/;"	function	line:6
+include "qlog.h"	D:\Cloud\git\Ä£°å\qlog\README.md	/^#include "qlog.h"$/;"	function	line:9

@@ -11,7 +11,12 @@
 #define qlog_warn(...) qlog(QLogger::LWARN, __VA_ARGS__)
 #define qlog_uerr(...) qlog(QLogger::LUERR, __VA_ARGS__)
 #define qlog_err(...) qlog(QLogger::LERROR, __VA_ARGS__)
-#define qlog_fatal(...) qlog(QLogger::LFATAL, __VA_ARGS__)
+#define qlog_fatal(...) \
+    do { \
+        qlog(QLogger::LFATAL, __VA_ARGS__); \
+        QLogger::getLogger().flush(); \
+        abort(); \
+    } while (0)
 
 #define setLog_level(l) QLogger::getLogger().setLogLevel(l)
 #define setLog_filename(n) QLogger::getLogger().setFileName(n, false)
@@ -76,13 +81,13 @@ struct QLogger: private noncopyable {
     static QLogger& getLogger();
     void start() { pthread_create(&tid_, NULL, log_routine, this); }
     void main();
+    void flush(); // from logBuf_ to kernel buffer, and then fsync
     // void stop() { pthread_join(tid_, NULL); }
 private:
     void lock() { pthread_mutex_lock(&mtx_); }
     void unlock() { pthread_mutex_unlock(&mtx_); }
     void inform() { pthread_cond_signal(&cond_); }
 
-    void flush(); // from logBuf_ to kernel buffer, and then fsync
     // std::string getPostfix(); // for extension
     int getTimestamp(char *buf, int len);
     static const char *levelStrs_[LALL + 1];
