@@ -20,7 +20,7 @@ namespace qzg {
 
 // static pthread_mutex_t mtx = PTHREAD_MUTEX_INITIALIZER;
 void *log_routine(void *arg) {
-    pthread_setname_np(pthread_self(), "wgadpt-qlog");
+    pthread_setname_np(pthread_self(), "qlog");
     // pthread_detach(pthread_self());
 
     QLogger *h = (QLogger *) arg;
