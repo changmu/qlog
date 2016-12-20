@@ -20,7 +20,7 @@ namespace qzg {
 
 // static pthread_mutex_t mtx = PTHREAD_MUTEX_INITIALIZER;
 void *log_routine(void *arg) {
-    pthread_setname_np(pthread_self(), "qlog");
+    pthread_setname_np(pthread_self(), "wgadpt-qlog");
     // pthread_detach(pthread_self());
 
     QLogger *h = (QLogger *) arg;
@@ -53,17 +53,19 @@ QLogger::QLogger(): level_(LALL), rotateSize_(64 << 10), fd_(-1), flags_(LTIMEST
 QLogger::~QLogger() {
     // printf("debug: ~QLogger()\n");
     flush();
+    #if 0
     if (-1 != fd_) {
         close(fd_);
         fd_ = -1;
     }
 
-    if (tid_ != -1)
+    if ((int) tid_ != -1)
         pthread_cancel(tid_);
 
     pthread_cond_destroy(&cond_);
     pthread_mutex_destroy(&mtx_);
     pthread_mutex_destroy(&condMtx_);
+    #endif
 }
 
 const char *QLogger::levelStrs_[] = {
@@ -153,7 +155,7 @@ void QLogger::flush() {
         while (!logBuf_.empty()) {
             auto& str = logBuf_.front();
             int r = ::write(fd, str.c_str(), str.size());
-            if (r != str.size())
+            if (r != (int) str.size())
                 fprintf(stderr, "[%s:%d] ::write failed. msg = %m (ignored)\n", __FILE__, __LINE__);
 
             if (r > 0 && fd_ != -1)
@@ -168,7 +170,7 @@ void QLogger::flush() {
         }
     } while (0);
 
-    fsync(fd);
+    // fsync(fd);
 }
 
 int QLogger::getTimestamp(char *buf, int len) {
@@ -211,7 +213,7 @@ void QLogger::log(int level, const char *file, int line, const char *func, const
     r = vsnprintf(buf + off, sizeof(buf) - off, fmt, ap);
     va_end(ap);
     off += r;
-    if (off >= sizeof(buf))
+    if (off >= (int) sizeof(buf))
         buf[sizeof(buf) - 1] = '\0'; // in case of buffer overflow
 
     do {

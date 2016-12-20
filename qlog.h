@@ -2,6 +2,7 @@
 
 #include <pthread.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string>
 #include <queue>
 
@@ -17,6 +18,7 @@
         QLogger::getLogger().flush(); \
         abort(); \
     } while (0)
+#define qlog_fatal_if(x, ...) if (x) qlog_fatal(__VA_ARGS__)
 
 #define setLog_level(l) QLogger::getLogger().setLogLevel(l)
 #define setLog_filename(n) QLogger::getLogger().setFileName(n, false)
@@ -81,8 +83,8 @@ struct QLogger: private noncopyable {
     static QLogger& getLogger();
     void start() { pthread_create(&tid_, NULL, log_routine, this); }
     void main();
-    void flush(); // from logBuf_ to kernel buffer, and then fsync
     // void stop() { pthread_join(tid_, NULL); }
+    void flush(); // from logBuf_ to kernel buffer, and then fsync
 private:
     void lock() { pthread_mutex_lock(&mtx_); }
     void unlock() { pthread_mutex_unlock(&mtx_); }
