@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string>
 #include <queue>
+#include <unistd.h>
 
 #define qlog_trace(...) qlog(QLogger::LTRACE, __VA_ARGS__)
 #define qlog_debug(...) qlog(QLogger::LDEBUG, __VA_ARGS__)
@@ -15,7 +16,7 @@
 #define qlog_fatal(...) \
     do { \
         qlog(QLogger::LFATAL, __VA_ARGS__); \
-        QLogger::getLogger().flush(); \
+        sync(); \
         abort(); \
     } while (0)
 #define qlog_fatal_if(x, ...) if (x) qlog_fatal(__VA_ARGS__)

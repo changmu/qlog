@@ -21,6 +21,7 @@ int main()
         qlog_debug("this is a debug msg, [cnt=%d]\n", ++cnt);
         qlog_trace("this is a trace msg, [cnt=%d]\n", ++cnt);
     }
+    qlog_fatal_if(1, "test fatal.\n");
     printf("Program exit succeed.\n");
     return 0;
 }
