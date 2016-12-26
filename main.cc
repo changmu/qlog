@@ -7,15 +7,13 @@ using namespace qzg;
 int main()
 {
     // setLog_level(QLogger::LINFO);
-    // setLog_filename("out.log");
+    setLog_filename("");
     // setLog_size(1 << 20);
     // setLog_flag(QLogger::LLOGLEVEL);
-    // setLog_syncInterval(1000);
-    startQLog();
 
     int cnt = 0;
     for (int i = 0; i < 100; ++i) {
-        qlog_fatal("this is a fatal msg, [cnt=%d]\n", ++cnt);
+        // qlog_fatal("this is a fatal msg, [cnt=%d]\n", ++cnt);
         qlog_err("this is a err msg, [cnt=%d]\n", ++cnt);
         qlog_uerr("this is a uerr msg, [cnt=%d]\n", ++cnt);
         qlog_warn("this is a warn msg, [cnt=%d]\n", ++cnt);

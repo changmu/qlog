@@ -24,9 +24,9 @@
 #define setLog_filename(n) QLogger::getLogger().setFileName(n, false)
 #define setLog_size(s) QLogger::getLogger().setFileSize(s)
 #define setLog_flag(f) QLogger::getLogger().setFileFlag(f)
-#define setLog_syncInterval(sec) QLogger::getLogger().setSyncInterval(sec)
+// #define setLog_syncInterval(sec) QLogger::getLogger().setSyncInterval(sec)
 
-#define startQLog() QLogger::getLogger().start()
+// #define startQLog() QLogger::getLogger().start()
 // #define stoplog() QLogger::getLogger().stop()
 
 #define qlog(level, ...) \
@@ -56,7 +56,7 @@ private:
     pthread_mutex_t *pmtx_;
 };
 
-void *log_routine(void *arg);
+// void *log_routine(void *arg);
 struct QLogger: private noncopyable {
     enum LogLevel { LFATAL = 0, LERROR, LUERR, LWARN, LINFO, LDEBUG, LTRACE, LALL };
     enum LogFlag {
@@ -74,21 +74,21 @@ struct QLogger: private noncopyable {
     void setLogLevel(const std::string& level);
     void setLogLevel(LogLevel level) { LockGuard lg(&mtx_); level_ = std::min(LALL, std::max(LFATAL, level)); }
     void setFileFlag(int flags) { LockGuard lg(&mtx_); flags_ = flags; }
-    void setSyncInterval(int sec) { LockGuard lg(&mtx_); syncInterval_ = sec; } // exec QLogger::sync()
+    // void setSyncInterval(int sec) { LockGuard lg(&mtx_); syncInterval_ = sec; } // exec QLogger::sync()
 
-    LogLevel getLogLevel() { LockGuard lg(&mtx_); return level_; }
-    const char *getLogLevelStr() { LockGuard lg(&mtx_); return levelStrs_[level_]; }
+    LogLevel getLogLevel() { return level_; }
+    const char *getLogLevelStr() { return levelStrs_[level_]; }
     int getFd() { LockGuard lg(&mtx_); return fd_; }
 
     static QLogger& getLogger();
-    void start() { pthread_create(&tid_, NULL, log_routine, this); }
-    void main();
+    // void start() { pthread_create(&tid_, NULL, log_routine, this); }
+    // void main();
     // void stop() { pthread_join(tid_, NULL); }
-    void flush(); // from logBuf_ to kernel buffer, and then fsync
+    void flush(const char *str, int size);
 private:
     void lock() { pthread_mutex_lock(&mtx_); }
     void unlock() { pthread_mutex_unlock(&mtx_); }
-    void inform() { pthread_cond_signal(&cond_); }
+    // void inform() { pthread_cond_signal(&cond_); }
 
     // std::string getPostfix(); // for extension
     int getTimestamp(char *buf, int len);
@@ -97,16 +97,16 @@ private:
     off_t rotateSize_;
     int fd_;
     int flags_;
-    int syncInterval_;
+    // int syncInterval_;
     std::string filename_;
     std::string oldFilename_;
     std::string prefix_; // for auto rotate
     // std::string postfix_;
     pthread_mutex_t mtx_;
-    pthread_mutex_t condMtx_;
-    pthread_cond_t cond_;
-    std::queue<std::string> logBuf_;
-    pthread_t tid_;
+    // pthread_mutex_t condMtx_;
+    // pthread_cond_t cond_;
+    // std::queue<std::string> logBuf_;
+    // pthread_t tid_;
 };
 
 } // namespace qzg
