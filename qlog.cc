@@ -18,7 +18,6 @@ using namespace std;
 
 namespace qzg {
 
-
 QLogger::QLogger() :
     level_(LALL),
     rotateSize_(64 << 10),
@@ -30,7 +29,7 @@ QLogger::QLogger() :
 
 QLogger::~QLogger()
 {
-    pthread_mutex_destroy(&mtx_);
+    // pthread_mutex_destroy(&mtx_);
 }
 
 const char *QLogger::levelStrs_[] = {
